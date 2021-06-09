@@ -1,0 +1,36 @@
+<%- include('./components/header.ejs')%>
+
+<body>
+	<%- include("./components/navbar.ejs")%>
+	<div class="container text-center my-4">
+		<a href="/home/daftar" class="btn btn-success">Tambahkan Bio Baru</a>
+	</div>
+
+	<div class="row my-5">
+		<% if(user.length == 0){%>
+			<div class="alert alert-danger mx-auto" role="alert">
+Biodata Masih Kosong !
+</div>
+		<%}%>
+		<% if(user.length > 0){%>
+			<% user.forEach((u,i)=>{%>
+				<div class="col col-10 col-sm-5 col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
+<div class="card text-center" style="width:20rem">
+	<h5 class="card-header"><%= u.namLeng%></h5>
+	  <div class="card-body">
+		  <h5 class="card-title"><%= u.namaPanggilan%></h5>
+ 			   <p class="card-text"><%= u.alamat%></p>
+  	  <a href="<%=`user/${u.id}` %>" class="btn btn-primary">Detail </a>
+  	</div>
+</div>
+				</div>
+
+		<%})%>
+	<%}%>
+					</div>
+
+
+</body>
+</html>
+
+

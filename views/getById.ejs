@@ -1,0 +1,76 @@
+<%- include( './components/header.ejs')%>
+
+<body>
+
+	
+	<div class="row mt-5 pt-5">
+	<div class="col col-10 col-sm-10 col-md-8 col-lg-5 col-xl-5 mx-auto">	
+		<div class="card">
+			<div class="card-header text-center">
+				<h5><%= user.namLeng%></h5>
+  </div>
+
+<table class="table">
+	<tr> 
+		<td>Nama Panggilan</td>
+		<td><%= user.namaPanggilan%> </td>
+	</tr>
+	<tr> 
+		<td>Umur</td>       
+		<td><%= user.umur%> </td>  
+	</tr>                                 
+  	<tr> 
+  		<td>Jenis Kelamin</td>
+  		<td><%= user.kel%> </td>
+  	</tr>                                   
+
+	<tr> 
+		<td>Tanggal Lahir</td>
+		<td><%= user.tanggalLahir%> </td>
+	</tr>
+
+	<tr> 
+		<td>Agama</td>
+		<td><%= user.agama%> </td>
+	</tr>
+
+	<tr> 
+		<td>Alamat</td>
+		<td><%= user.alamat%> </td>
+	</tr>
+	<tr class=""> 
+		<td>
+			<a class="btn btn-primary" href="/home/user"> Kembali</a>
+		</td>
+		<td>
+			<a class="btn btn-success mb-3" href="/home/update/<%= user.id%>"> Update</a>
+			<form action="/home/delete" method="POST">
+				<input type="hidden" name="id" value="<%= user.id%>">
+			<button type="submit" class="btn btn-danger">Hapus</button>	
+			</form>
+
+		</td>
+
+
+
+	</tr>
+
+
+	</tbody>
+</table>
+ 
+  
+</div>
+	</div>
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
