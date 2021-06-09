@@ -10,7 +10,7 @@ router.get("/home/about", (req, res) => {
 		tittle: "about"
 	})
 })
-//app.get("/user", urlcontroller.userAll);
+
 router.get("/home/user", urlcontroller.userAll)
 router.get("/home/user/:id", urlcontroller.getById);
 router.get("/home/daftar", urlcontroller.register)

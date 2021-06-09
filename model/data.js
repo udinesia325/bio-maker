@@ -24,7 +24,17 @@ const userAll = (req, res, next) => {
 const getById = (req, res) => {
 	let data = fs.readFileSync("./database/bio.json", "utf-8", (data) => data)
 	let parseData = JSON.parse(data)
-	let user = parseData.filter(i => i.id == req.params.id)
+	let user = parseData.filter(i => {
+
+		if (i.id == req.params.id) {
+			return i.id
+		} else {
+			res.send(`<h1>404</h1>
+				<p>page not found <a href="/home">Back</a></p>`)
+		}
+
+
+	})
 
 	res.render("getById", {
 		tittle: "getById",
