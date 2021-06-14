@@ -28,9 +28,6 @@ const getById = (req, res) => {
 
 		if (i.id == req.params.id) {
 			return i.id
-		} else {
-			res.send(`<h1>404</h1>
-				<p>page not found <a href="/home">Back</a></p>`)
 		}
 
 
